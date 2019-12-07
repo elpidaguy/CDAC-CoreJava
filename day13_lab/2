@@ -1,0 +1,3 @@
+Employee [eid=5, ename=rob, sal=15000, deptid=joinDate=2018-12-24]
+Employee [eid=4, ename=tom, sal=20000, deptid=joinDate=2015-06-12]
+Employee [eid=6, ename=bob, sal=25000, deptid=joinDate=2017-08-06]

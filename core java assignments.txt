@@ -1,0 +1,519 @@
+Day 1
+0. Revise from readme_day1 along with other readmes.
+1. Accept any numbers as command line arguments from user. If user supplies less than 2 arguments supply error message & terminate. If  correct, compute average & display the same.
+(args.length = to find array size 
+Double.parseDouble(s) for parsing double values)
+
+2. Create a class Calculator(in package com.app) with 2 private double data members firstNumber & secondNumber.
+Supply getters & setters.
+Add 4 instance methods add,subtract,multiply & divide , without parameters , to return result of calculation.
+Divide method should return 0 in case of 0 denominator.
+Create a TestCalculator class (in package tester) with scanner.
+Accept 2 numbers from user & set them in Calculator.
+Menu 1: Add
+2 : Subtract 
+3 : Multiply
+4 : Divide
+5 :Exit.
+
+
+3. Display food menu to user. User will select items from menu along with the quantity. Hard code food prices. (eg 1. Dosa 2. Samosa .......10 . Generate Bill ) When user enters 'Generate Bill' option, display total bill & exit.
+Create above class in "tester" package
+
+4. Write a class Converter.java , in package "utils.conversion"
+Add static methods for conversion & returning result  to caller.
+5.1 Convert pounds to kilogram(1 pound=0.4536 Kg)
+eg : I/P 100
+O/p 45.36Kg
+5.2 Convert the temperature in Celsius to Fahrenheit (F = C× 9/5 + 32)
+5.3 Convert seconds into a formatted string , to display hour,min,seconds
+eg : I/P 67890
+O/P  18h51m30s
+
+
+
+5. Please go through ready made code samples --Test1,Test2,Test3,Test4
+& guess the o/p
+
+
+Day 2
+1. Create a Customer class , in a package com.cdac.core with data members 
+name(string),email(string),age(int), creditLimit(double)
+1.1 Supply a parameterized constructor to accept all details from user
+1.2 Supply an argument less  constructor to init name to "Rama" , email to "rama@gmail.com",age=25,creditLimit=10000
+1.3 Supply another constructor , to init creditLimit to 15000, taking rest of the i/ps from user.
+1.4 Write a method , getDetails to return string form of customer name & credit limit details.
+1.5 Supply getter & setter for creditLimit.
+
+Must make use of this(...) for constructor chaining.
+
+1.6 Write a TestCustomer class in "tester" package ,  to test all of above.
+Using Scanner , accept customer details suitably & test all 3 constructors.
+Display customer details.
+Increase credit limit of the 1st customer by 1000 & display details again.
+
+2. Solve Tank assignment along with memory picture.
+
+class Tank {
+  private int level;
+  Tank(int l)
+   {
+     level=l;
+   }
+  public void setLevel(int level1)
+  {
+    level=level1;
+  }
+  public int getLevel()
+  {
+    return level;
+  }
+}	
+
+public class Assignment {
+  public static void main(String[] args) {
+    Tank t1 = new Tank(10);
+    Tank t2 = new Tank(20);
+   
+    s.o.p("1: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t1 = t2;
+    s.o.p("2: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t1.setLevel(27);
+     s.o.p("3: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t2.setLevel(t1.getLevel()+10);
+     s.o.p("4: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+  }
+}
+
+3. Refer to instructions of "install IDE" & follow the same.
+
+Day 3
+0. Open javadocs in browser .(java8_docs\docs\api\index.html)
+1. Follow lab sequence for revision
+2. Solve this.
+Create java application for the following.
+Create Student class in a package "com.cdac.core" 
+2.1 Every student must have   --- id(int) --if possible system generated(clue : use static id counter), name (String), email(String), age(int), gpa (double)
+
+2.2 Add suitable parameterized constructor.
+Don't accept gpa in constructor , since it has to be computed.
+
+2.3 Add a method getDetails to  fetch complete student details
+(ret type -- String)
+
+2.4  Add computeGPA method in Student class
+Accept 3 scores for quiz , test & assignments
+GPA should be computed on 20 % of quiz score, 50% of test score & 30% of assignment score.
+
+3 Write a TestStudents class in "com.tester" package
+
+Accept how many students to enroll in the class ,  from user.
+
+ Accept student details(w/o gpa) , using loop.
+Accept student scores & compute GPAs , using loop
+Display name of student having highest GPA.
+
+Day 4
+
+1. Apply inheritance & polymorphism  to organization scenario.
+
+Emp based org structure --- Emp , Mgr , Worker
+
+Emp state--- id(int --system generated: auto increment), name, email,deptId , basic(double)
+Use static init block --to init id counter to 100.
+
+Behaviour --- get emp details -- via toString
+
+Mgr state  ---id,name,email,basic,dept,perfBonus
+Behaviour ----1. get mgr details(toString)
+2. compute net salary (formula: basic+perfBonus)
+eg : public double computeNetSalary(){...}
+3. get performance bonus.
+public double getPerfBonus() {...}
+
+
+Worker state  ---id,name,email,basic,dept, hoursWorked,hourlyRate
+Behaviour--- 
+1. get worker details(toString)
+2.  compute net salary (formula:  = basic+(hrs*rate)
+3. get hrlyRate of the worker  
+
+Organize classes in inheritance  hierarchy.
+
+Write TestOrg in "tester" package.
+Create suitable array to store organization details.
+Provide following options
+1. Hire Manager
+2. Hire Worker  
+3. Display information of all employees , net salary using single for-each loop.
+
+4. Display employee specific details.
+I/P emp id
+O/P --  Display emp details or invalid emp id (error message)
+
+5. Salary Increment
+I/P Emp id & basic salary increment
+O/P --Updated salary or invalid emp id (error message)
+
+10: Exit
+
+
+Day 5
+1. Apply abstraction to emp based organization.
+Test it.
+Add new options 
+6. Display employee specific details
+I/P emp id 
+O/P If its manager --display its performance bonus , if its worker then display its hourly rate.
+
+
+2. Apply interfaces.
+
+1.Create  Computable interfaces.
+Declare functionality to calculate area & perimeter of a bounded shape.
+Add PI as a constant.
+
+Develop follwoing classes
+
+2. Point --- x,y , constructor , toString
+
+3. Circle --x,y,radius,constructor  , toString, calc area & perimeter +
+public void drawArc()
+{ sop("drawing arc"); }
+
+4. Rectangle --x,y,width,height,constructor  , toString, calc area & perimeter +
+public void diagonals()
+{
+ sop("diagonals of rectangle are equal in lenth");
+}
+
+5. Tester --Test using dyn method dispatch.
+5.1 Prompt user for how many bounded shapes. Create suitable array.
+Options
+1. Add Circle
+2. Add Rectangle
+3. Display area & perimeter of all shapes, using for-each loop.
+In the same for-each , invoke drawArc for a circle or diagonals for a rectangle type.
+
+6. Go through readmes on --inheritance,interfaces & javadocs for ClassCastException
+
+Create a separate class TestPointEquals
+Point p1=new Point(1,2);
+Point p2=new Point(1,2);
+sop(p1.equals(p2));
+
+
+
+Day 6
+
+1. Create new Student class in pkg "com.app.core" 
+It has --prn(String),name,email,marks,course
+Provide constructor & toString
+Student's identity is : prn no
+(Meaning 2 students are same iff their prn nos are same)
+Override equals method correctly.
+
+1.1 Create custom exception class
+StudentHandlingException , in cust_excs pkg , as a checked exception.
+
+1.2 Create a Tester class with main.
+Create Scanner , within  try-with-resources.
+
+Create hard-coded sample data with Student[] , with 3 students, with prns 
+dac-001,dac-002,dac-003 (Don't create it with dynamic array!!!)
+
+Prompt user , to accept new student's  details.
+If student with same prn already exists , throw custom exception(showing err mesg : dup prn!!!!) , otherwise--add the details in array & give success message.
+Display array contents , using for-each.
+
+2. After completing 1st part , add more validation rules
+(In utils packge, add a class ValidationRules & add static methods)
+2.1 student name must be min 4 chars & max 10 chars long
+(validateName method)
+
+2.2 student email must be min 4 chars & max 10 chars long & must contain @ char. (Hint : use contains method of String class)
+(validateEmail method)
+
+2.3 valid course names are -- dac/dmc/dbdac/dai
+Do proper exception handling & complete the assignment.
+(Hint : In tester , u must call all these validation rules , before admitting a new student)
+
+
+Day 7 
+Complete day 6 assignment if pending.
+Must have following classes --Student , StudentHandlingException ,ValidationRules,Tester .
+
+Modifications 
+Add in Student class , DOB 
+private Date dob;
+Modify constructor,toString suitably.
+Add validation rule -- dob can't be before 1st Jan 1985.
+
+Replace in Student class --course from String to enum.
+Add suitable conversion/validation method in ValidationRules class.
+
+In Tester , accept 1 student details , validate them . In case of success -- create the student instance & display its details.
+In case of errors --display error message via catch block.
+
+
+Day 8
+No new assignments . Please revise as per lab sequence.
+
+Day 9
+Create day9_lab eclipse project.
+Copy Student,StudentHandlingException & Validation rules packaged classes under <src> in eclipse.
+Write a Tester for the following 
+1. Add populateStudents method in CollectionUtils class , to return populated AL<Student> ---test data.
+
+2. Create a TestStudents class , as per template (already discussed)
+
+Options
+1. New Student admission
+2. Accept course name from user
+Display names of all students for a specific course.
+3. Update student marks
+I/P --prn & new marks
+O/P success message or err message via custom exception
+4. Display prn & names  of all students born after specific date & enrolled in a specific course.
+I/P date & course name
+O/P prn & names.
+5. Cancel Admission
+I/P --prn 
+O/P success message or err message via custom exception
+
+6. Sort students as per prns , using natural ordering & display the same.
+
+7. Sort students as per dob & marks  , using custom ordering & display the same.
+
+8. Display name of a topper for a specific course(assume 1 topper only)
+I/P course name.
+O/P name of a topper.
+Hint(Use max() of Collections)
+
+
+Day 10
+Create day10_lab eclipse project.
+Copy Student,StudentHandlingException & Validation rules packaged classes under <src> in eclipse.
+Write a Tester for the following 
+1. Add populateStudents method in CollectionUtils class , to return populated HM<?,?> of students.
+
+2. Create a TestStudents class , as per template (already discussed)
+
+Options
+1. New Student admission
+Check for duplicate PRN . (add a rule in ValidationRules class)
+
+2. Accept course name from user
+Display names of all students for a specific course.
+
+3. Update student marks
+I/P --prn & new marks
+O/P success message or err message via custom exception
+
+4. Display prn & names  of all students born after specific date & enrolled in a specific course.
+I/P date & course name
+O/P prn & names.
+
+5. Cancel Admission
+I/P --prn 
+O/P success message or err message via custom exception
+
+6. Sort students as per prns , using natural ordering & display the same.
+
+7. Sort students as per dob & marks  , using custom ordering & display the same.
+
+8. Display name of a topper for a specific course(assume 1 topper only)
+I/P course name.
+O/P name of a topper.
+How ?????????????
+
+
+Day 10
+1. Follow lab sequence
+2. Solve using Maps(HashMap)
+2.1. New Student admission
+Check for duplicate PRN . (add a rule in ValidationRules class)
+
+2.2 Display student details
+I/P PRN
+O/P --student details or err mesg via custom exception
+
+
+2.3  Update student marks
+I/P --prn & new marks
+O/P success message or err message via custom exception
+
+2.4 Cancel Admission
+I/P --prn 
+O/P success message or err message via custom exception
+
+
+Day 11
+1. Create java application for customer management .
+
+1.1 Customer class 
+data members -- email(unique),password , reg amount,regDate(Date), type (enum : SILVER/GOLD/PLATINUM)
+address(home address , office address,....)
+Provide suitable constr to accept all details excluding address.
+(Customer HAS-A Address)
+How will you add multiple addresses?
+Address -- city,state,country,phoneNo,type
+Add a method linkAddress, to assign address to customer
+eg : In Customer class ,
+public void linkAddress(String city,String state,String country,String phoneNo,String type)
+
+1.2 Currently no validation rules.
+Can supply conversion methods in a separate class(string -->date , string--enum)
+
+1.3 Create a Tester for following options
+Start with hardcoded customers stored in suitable D.S (later restore it from bin file)
+1. Register new customer
+I/P --customer details
+2. Link Address(Try last!)
+customer email , password , adr details
+3. Customer Login
+customer email , password ,
+4. Un subscribe customer
+customer email , password ,
+5. Display all customers of a particular type
+I/P -- type (silver/gold/platinum)
+6. Update Address(Try last!)
+
+7. Sort customers as per email
+8. Sort customers as per reg date.
+
+2. Revise data read from text file.
+
+3. Try this
+Read data from std input (console i/p) & display it ,  till user says exit.
+
+
+Day 12
+Continue with day11 assignment & add persistence , using Object streams.
+(When application starts , restore customer info from bin file. Before terminating , store customer info into a bin file)
+
+Create separate class IOUtils , to add static methods for the same.
+------------------------------
+Day 13
+1. Create multi threaded application , to print even & odd numbers from a range, specified by user.
+(3 threads 1. main --UI that will accept start n end numbers from user, 2. EvenPrinter 3. OddPrinter)
+Ensure no orphans. First try it with "extends Thread" & later with "implements Runnable" .
+
+2. Create a suitable data structure to store department wise employee details.
+Populate it with 3 depts having 4 emps each(hard coded)
+Create multi threaded application , to store emp data in a separate text file for separate department, sorted as per salary.
+
+Day 14
+
+1. Solve 2nd assignment of day 13( collection + i/o + thrds) --Mandatory
+
+2. Create java application for the following.
+In main thread --get populated (hard coded) list of Emps (eg : ArrayList<Emp> )
+Emp -- id(int),name(string),salary(double),hireDate(LocalDate)
+
+Pass the SAME emp list to 3 threads (sharing of common resource) 
+t1 -- sorts the list as per emp name & stores in in txt file (t1.txt)
+t2 -- sorts the list as per emp salary & stores in in txt file (t2.txt)
+t3 -- sorts the list as per emp hire date & stores in in txt file (t3.txt)
+
+Observe the problem first & then fix it!
+
+Day 15
+1. Fix the problem in day15.2\src\thrd_unsafe_coll\ThreadUnsafeCollections.java
+(problem -- concurrent modification exc)
+Replace it by Vector --observe n conclude, Replace it by Collections.synchronizedList  --observe n conclude
+
+What will be the actual solution ? Apply & test .
+
+2. Complete Day14's 2nd assignment , using synchronized block technique.
+
+Day 16
+1. Create peer to peer chat client n server.
+(asynchronous --non blocking)
+Suggestion : Display received messages on text console(System.out) , for sending message, can use pop-up dialog box
+API help : javax.swing.JOptionPane class
+method
+public static String showInputDialog(Object message)
+eg : String mesg=JOptionPane.showInputDialog("Enter mesg to send");
+OR
+
+Customer management Service , for CRUD operations.
+
+
+Day 17
+1. Create Layered(Tester--DAO (Utils) --POJO--DB) 
+application for the following
+1.1 students table -- id(int PK auto increment),name(varchar),email(varchar) unique,address(varchar),dob(date),marks(int),course_id(int FK --references courses table)
+courses table -- course_id(int PK auto increment),name(unique),fees(double),strt_date,end_date(date)
+
+courses 1-----* students (one--to --many via FK)
+
+
+Insert 2 courses(at least) & 3 students per course
+
+1.2 Student POJO
+1.3 Student DAO 
+1.4 Tester
+Options
+1. Display student details for a specific course name
+i/p --course name
+o/p -- matched student details
+
+2. Student admission
+i/p --student details
+name,email,address,dob,course_id or still better course name
+o/p status message --student admission success / failed
+
+3. Display topper details for a specific course
+i/p --course id or course name
+o/p --topper details
+
+4. Cancel Admission
+i/p student id
+o/p status message --student admission cancelled / failed
+
+5. Update marks
+i/p student id , marks
+o/p status message --student's ,marks updated / failed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
